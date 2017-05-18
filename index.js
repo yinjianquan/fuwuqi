@@ -33,7 +33,7 @@ app.use( async ( ctx ) => {
   // 输出静态资源内容
   if ( _mime && _mime.indexOf('image/') >= 0 ) {
     // 如果是图片，则用node原生res，输出二进制数据
-    ctx.res.writeHead(200)
+    ctx.res.writeHead(200,{'Content-Type':'text/plain','charset':'utf-8'})
     ctx.res.write(_content, 'binary')
     ctx.res.end()
   } else {
